@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <title>Do</title>
+    <link rel="stylesheet" href="./index.css" >
+</head>
+<body>
+    <div class="container">
+        <div class="top" id="top"></div>
+        <div class="todo">
+            <div class="heading">
+                <h1>TODO</h1>
+                <div class="toggler" id="toggler">
+                    <img class="not-active-theme" src="./icons/moon.png" alt="" id="moon">
+                    <img class="active-theme"src="./icons/sun.png" alt="" id="sun">
+                </div>
+            </div>
+            <div class="add-task" id="add-task">
+                <button><img class="check-box" onclick= "addTask()" src="./icons/dark Oval.png" alt="add" id="check-box"></button>
+                <input type="text" name="" id="new-task" placeholder="Add a task, click button to add">
+            </div>
+            <div class="list">
+                <ul id="to-do-list">
+                    <!-- <li>
+                        <div class="checked">
+                            <img src="./icons/Oval Copy.png" alt="">
+                            <p>something</p>
+                        </div>
+                        <img src="./icons/icon-cross.svg" alt="">
+                    </li> -->
+                </ul>
+                <div class="list-menus">
+                    <div class="items-left">
+                        <p><span id="number-left"></span> items left to complete</p>
+                    </div>
+                    <div class="list-options">
+                        <p class="active-list" id="allTasks" onclick="showAllTasks()">All</p>
+                        <p id="activeTasks" onclick="showActiveTasks()">Active</p>
+                        <p id="completedTasks" onclick="showCompletedTasks()">Completed</p>
+                    </div>
+                    <div class="clear-option">
+                        <p>Clear Completed</p>
+                    </div>
+                </div>
+            </div>           
+            <div class="drag-and-drop-text">
+                <p>Drag and drop to reorder list</p>
+            </div>
+        </div>
+    </div>
+    
+
+    <script src="./index.js"></script>
+</body>
+</html>
