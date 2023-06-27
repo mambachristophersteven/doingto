@@ -9,8 +9,9 @@ const body = document.body;
 const allTasksButton = document.getElementById("allTasks");
 const activeTasksButton = document.getElementById("activeTasks");
 const completedTasksButton = document.getElementById("completedTasks");
+const clearCompletedButton = document.getElementById("clearCompletedButton");
+const itemsLeftText = document.getElementById("items-left-text");
  
-
 
 toggler.addEventListener("click", () =>{
 
@@ -59,6 +60,7 @@ function addTask(){
 function UpdateItemsCount(){
     let itemsLeftCount = document.querySelectorAll('.activeTask').length;
     itemsLeft.innerHTML = itemsLeftCount;
+    itemsLeftText.innerHTML = itemsLeftCount + ' left to be completed';
 
 }
 
@@ -93,29 +95,54 @@ UpdateItemsCount();
 
 
 function showAllTasks(){
-    // let numberOfActiveTasks =  document.querySelectorAll('.activeTask');
     activeTasksButton.classList.remove('active-list');
     allTasksButton.classList.add('active-list');
     completedTasksButton.classList.remove('active-list');
+
+    todoList.classList.remove('completedTasksList')
+    todoList.classList.remove('activeTasksList')
+
+    let itemsLeftCount = document.querySelectorAll('.activeTask').length;
+    itemsLeft.innerHTML = itemsLeftCount;
+    itemsLeftText.innerHTML = itemsLeftCount + ' left to be completed';
+
 }
 
 function showActiveTasks(){
-    // let numberOfActiveTasks =  document.querySelectorAll('.activeTask');
     activeTasksButton.classList.add('active-list');
     allTasksButton.classList.remove('active-list');
     completedTasksButton.classList.remove('active-list');
+
+    todoList.classList.remove('completedTasksList')
+    todoList.classList.add('activeTasksList')
+
+    let itemsLeftCount = document.querySelectorAll('.activeTask').length;
+    itemsLeft.innerHTML = itemsLeftCount;
+    itemsLeftText.innerHTML = itemsLeftCount + ' left';
+
 }
 
 function showCompletedTasks(){
-    // let numberOfActiveTasks =  document.querySelectorAll('.activeTask');
     activeTasksButton.classList.remove('active-list');
     allTasksButton.classList.remove('active-list');
     completedTasksButton.classList.add('active-list');
+    
+    todoList.classList.add('completedTasksList')
+    todoList.classList.remove('activeTasksList')
 
-    let activeItems = document.querySelectorAll('.completedTask').length;
-    console.log(activeItems);
+    let itemsCompletedCount = document.querySelectorAll('.completedTask').length;
+    itemsLeft.innerHTML = itemsCompletedCount;
+    itemsLeftText.innerHTML = itemsCompletedCount + ' completed';
+    // console.log(activeItems);
 
 }
 
+function clearCompleted(){
+    const completedTasks = todoList.getElementsByClassName('completedTask');
+    while(completedTasks.length > 0){
+        completedTasks[0].remove();
+    }
 
-
+    
+    UpdateItemsCount();
+}

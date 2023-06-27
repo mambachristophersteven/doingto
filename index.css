@@ -164,6 +164,13 @@ body{
     text-decoration: none;
 }
 
+.completedTasksList .activeTask{
+    display: none;
+}
+.activeTasksList .completedTask{
+    display: none;
+}
+
 
 
 ul li{

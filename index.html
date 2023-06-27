@@ -23,7 +23,7 @@
                 <input type="text" name="" id="new-task" placeholder="Add a task, click button to add">
             </div>
             <div class="list">
-                <ul id="to-do-list">
+                <ul id="to-do-list" class="allTasksList">
                     <!-- <li>
                         <div class="checked">
                             <img src="./icons/Oval Copy.png" alt="">
@@ -34,7 +34,7 @@
                 </ul>
                 <div class="list-menus">
                     <div class="items-left">
-                        <p><span id="number-left"></span> items left to complete</p>
+                        <p id="items-left-text"><span id="number-left"></span></p>
                     </div>
                     <div class="list-options">
                         <p class="active-list" id="allTasks" onclick="showAllTasks()">All</p>
@@ -42,7 +42,7 @@
                         <p id="completedTasks" onclick="showCompletedTasks()">Completed</p>
                     </div>
                     <div class="clear-option">
-                        <p>Clear Completed</p>
+                        <p id="clearCompleted" onclick="clearCompleted()">Clear Completed</p>
                     </div>
                 </div>
             </div>           
