@@ -53,10 +53,6 @@ body{
     background-size: cover;
 }
 
-
-
-
-
 .todo{
     position: absolute;
     width: 30vw;
@@ -84,12 +80,12 @@ body{
 }
 
 .toggler{
-    width: 70px;
+    width: 50px;
     height: 50px;
     display: flex;
     align-items: center;
-    gap: 0;
     position: relative;
+
 }
 
 .toggler > img{
@@ -263,3 +259,4 @@ ul li span{
 .active-list{
     color: rgba(58, 124, 253, 1);
 }
+
