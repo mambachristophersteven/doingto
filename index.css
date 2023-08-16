@@ -260,3 +260,9 @@ ul li span{
     color: rgba(58, 124, 253, 1);
 }
 
+@media screen and (max-width: 768px){
+    .todo{
+        width: 70vw;
+        left: 15vw;
+    }
+}
