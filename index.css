@@ -272,4 +272,8 @@ ul li span{
         width: 90vw;
         left: 5vw;
     }
+
+    .list-menus{
+        display: none;
+    }
 }
